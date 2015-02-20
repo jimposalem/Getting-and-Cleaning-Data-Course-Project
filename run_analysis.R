@@ -48,15 +48,6 @@ Data<-subset(Data,select=selectedNames)
 
 activityLabels <- read.table(file.path(path_rf, "activity_labels.txt"),header = FALSE)
 
-#for (i in 1:length(Data$activity)){
-#  if (Data$activity[i] < 7){Data$actvity <- "LAYING"}else{}
-#  if (Data$activity[i] < 6){Data$actvity <- "STANDING"}else{}
-#  if (Data$activity[i] < 5){Data$actvity <- "SITTING"}else{}
-#  if (Data$activity[i] < 4){Data$actvity <- "WALKING_DOWNSTAIRS"}else{}
-#  if (Data$activity[i] < 3){Data$actvity <- "WALKING_UPSTAIRS"} else{}
-#  if (Data$activity[i] < 2){Data$actvity <- "WALKING"} else {}
-#}
-
 Data$activity <- activityLabels[match(Data$activity, activityLabels[,1]),2]
 
 
